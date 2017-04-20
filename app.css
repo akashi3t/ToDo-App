@@ -1,0 +1,68 @@
+.start{
+	margin-top:4%;
+}
+.task{
+	margin-left:2%;
+	font-size:20px;
+}
+.task-queue{
+	background-color:#E0A421;
+	padding:0px;
+	margin: 2%;
+	
+}
+.colHeader{
+	width:100%;
+	background-color: black;
+	text-align: center;
+	border-radius: 3px;
+	height: 40px;
+	color: white;
+	padding:11px;
+}
+.add-queue .scopeDiv{
+	padding:4%;
+}
+
+.task-queue .scopeDiv{
+	padding:4%;
+	height:260px;
+	overflow-y: scroll;
+}
+.btn-danger{
+	margin-top: 3%;
+}
+
+.add-queue{
+	margin: 2%;
+	background-color:#C98A3B;
+	height:300px;padding:0px;
+	margin-left: 2%;
+}
+#aboutApp{
+	background-color:#607B7D;
+	height:200px;padding:0px;
+}
+.col-lg-4{
+	width:31%;
+	margin: 1%;
+}
+.content{
+	padding:3%;
+	color:white;
+}
+#aboutAuthor{
+	margin-top: 2%;
+	background-color:#607B7D;
+	height:300px;padding:0px;
+}
+@media screen and (max-width:620px) and (min-width: 450px){
+	.starter-template{
+		margin-top:10%;
+	}
+}
+@media screen and (max-width:450px) {
+	.starter-template{
+		margin-top:25%;
+	}
+}

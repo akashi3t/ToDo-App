@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html ng-app="simple">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+
+    <link rel="icon" type="image/png" href="/favicon.ico">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="app.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.0/angular.min.js"></script>
+    <script src="app.js"></script>
+  </head>
+  <body ng-controller="index">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container" >
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">To Do </a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#aboutApp">About the app</a></li>
+            <li><a href="#aboutAuthor">Author</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container start" style="padding:3%;">
+      <section>
+        <div class="starter-template">
+          <div class="col-lg-5 task-queue">
+            <div class="colHeader">Tasks in queue</div>
+            <div class="col-lg-12 scopeDiv">
+            <h2>{{removeMsg}}</h2>
+            <div  ng-repeat="task in tasks">
+              <input type="checkbox" ng-model="task.status"><b><span class="task" ng-bind="task.Text"></span></b>
+
+            </div>
+            <button type="button" ng-click="removeTask()" ng-if="removeButton" class="btn btn-danger">Remove</button>
+          </div>
+        </div>
+        <div class="col-lg-5 add-queue">
+          <div class="colHeader">Add a new task</div>
+            <form ng-submit="todoAdd()" class="scopeDiv">
+              <div class="form-group">
+                <input type="text" class="form-control" ng-model="addNewTask" placeholder="Text" required>
+              </div>
+              <button type="submit" class="btn btn-primary">Add</button>
+            </form>
+          </div>
+        </div>
+      </section>
+      <section class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="aboutApp" style="position:relative;">
+        <div class="colHeader">About the app</div>
+        <p class="content">{{todoContent}}</p>
+      </section>
+      <section class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="aboutAuthor">
+        <div class="colHeader">About Author</div>
+        <div class="col-lg-4"><img src="img/akash.jpg" width="200"></div>
+        <p class="content"> Name : {{authorName}}</p>
+      </section>
+    </div>
+  </body>
+</html>
